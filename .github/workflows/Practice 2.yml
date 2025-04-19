@@ -1,0 +1,10 @@
+name: Practice new type of Workflow to Handle issues
+
+on: issues
+
+jobs:
+    info:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Output event details
+              run: echo "${{ toJson(github.event.issue) }}"
