@@ -1,0 +1,22 @@
+name: Practice Basic Workflow
+
+on: push
+
+jobs:
+    Continous_Integration:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get the code
+              uses: actions/checkout@v4
+
+            - name: Download NodeJS
+              uses: actions/setup-node@v4
+
+            - name: Download Dependencies
+              run: npm ci
+
+            - name: Run Tests
+              run: npm run test
+
+            - name: Build the Node Application
+              run: npm run build
